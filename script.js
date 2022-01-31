@@ -4,6 +4,7 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let windowHeight = window.outerHeight * 0.4;
 let windowWidth = window.outerWidth - 100;
+var fps = 20;
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
@@ -24,14 +25,15 @@ const detectorConfig = {
   modelType: poseDetection.movenet.modelType.SINGLEPOSE_LIGHTNING,
 };
 
-var upValue = 150;
-var downValue = 130;
+// var upValue = 150;
+// var downValue = 130;
 
-var threshHoldKneeAnkleDistance = 30;
+// var threshHoldKneeAnkleDistance = 30;
 let detector;
 
 var canCountIncrease = false;
 var countValue = 0;
+
 const setupCamera = () => {
   navigator.mediaDevices
     .getUserMedia({
@@ -53,9 +55,7 @@ const detectPose = async () => {
 
   // temporary area
   if (poses.length) {
-    let left_hip = poses[0].keypoints.find(
-      (x) => x.name == "left_hip"
-    );
+    let left_hip = poses[0].keypoints.find((x) => x.name == "left_hip");
     let left_knee = poses[0].keypoints.find((x) => x.name == "left_knee");
 
     let right_hip = poses[0].keypoints.find((x) => x.name == "right_hip");
@@ -98,22 +98,18 @@ const detectPose = async () => {
       ) {
         document.getElementById("positionValue").innerHTML = "UP";
         canCountIncrease = true;
-       
-      } else if(rightShoulderAndWristDistance < downValue) {
+      } else if (rightShoulderAndWristDistance < downValue) {
         document.getElementById("positionValue").innerHTML = "DOWN";
 
-         if (canCountIncrease) {
+        if (canCountIncrease) {
           countValue = countValue + 1;
           document.getElementById("countValue").innerHTML = countValue;
           canCountIncrease = false;
-
         }
       }
-    }else{
-      document.getElementById(
-        "message"
-      ).innerHTML = 'Looks like we are not able to see your whole body';
-      
+    } else {
+      document.getElementById("message").innerHTML =
+        "Looks like we are not able to see your whole body";
     }
   }
 
@@ -167,12 +163,10 @@ video.addEventListener("loadeddata", async () => {
   document.getElementById("loadingText").innerHTML =
     "Please stand in camera so that it can see full body";
 
-    // document.getElementById("upscoreThreshold").innerHTML =upValue;
-    // document.getElementById("downscoreThreshold").innerHTML =downValue;
+  // document.getElementById("upscoreThreshold").innerHTML =upValue;
+  // document.getElementById("downscoreThreshold").innerHTML =downValue;
 
-
-    
-  setInterval(detectPose, 30);
+  setInterval(detectPose, fps);
 });
 
 function sendMessagetoFlutter(value) {
