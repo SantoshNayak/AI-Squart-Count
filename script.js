@@ -100,7 +100,7 @@ const detectPose = async () => {
         countValue = countValue + 1;
         canCountIncrease = false;
 
-        document.getElementById("countValue").innerHTML = countValue;
+        document.getElementById("countValue").innerHTML = "countValue";
       }
     } else {
       document.getElementById("message").innerHTML =
