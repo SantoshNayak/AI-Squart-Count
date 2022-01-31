@@ -5,6 +5,9 @@ let ctx = canvas.getContext("2d");
 let windowHeight = window.outerHeight * 0.4;
 let windowWidth = window.outerWidth - 100;
 var fps = 30;
+
+var thresholdRightKneeAndHipDownDistance = 20;
+var thresholdRightKneeAndHipUpDistance = 30;
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
@@ -67,10 +70,8 @@ const detectPose = async () => {
       right_knee.score > 0.5 &&
       right_hip.score > 0.5
     ) {
-      // var a = right_shoulder.x - right_wrist.x;
-      // var b = right_shoulder.y - right_wrist.y;
-
-      // var c = Math.sqrt(a * a + b * b);
+      document.getElementById("message").innerHTML =
+        "We are good to count Squarts now ";
 
       var rightKneeAndHipDistance = distanceBetweenTwo(
         right_knee.x,
@@ -88,25 +89,19 @@ const detectPose = async () => {
       document.getElementById(
         "rightKneeAndHipDistance"
       ).innerHTML = rightKneeAndHipDistance;
-      // document.getElementById(
-      //   "rightKneeAndAnkle"
-      // ).innerHTML = rightKneeAndAnkleDistance;
 
-      // if (
-      //   rightShoulderAndWristDistance > upValue &&
-      //   rightKneeAndAnkleDistance < threshHoldKneeAnkleDistance
-      // ) {
-      //   document.getElementById("positionValue").innerHTML = "UP";
-      //   canCountIncrease = true;
-      // } else if (rightShoulderAndWristDistance < downValue) {
-      //   document.getElementById("positionValue").innerHTML = "DOWN";
+      if (thresholdRightKneeAndHipUpDistance > 30) {
+        canCountIncrease = true;
+      }
+      if (
+        rightKneeAndHipDistance <= thresholdRightKneeAndHipDownDistance &&
+        canCountIncrease
+      ) {
+        countValue = countValue + 1;
+        canCountIncrease = false;
 
-      //   if (canCountIncrease) {
-      //     countValue = countValue + 1;
-      //     document.getElementById("countValue").innerHTML = countValue;
-      //     canCountIncrease = false;
-      //   }
-      // }
+        document.getElementById("countValue").innerHTML = countValue;
+      }
     } else {
       document.getElementById("message").innerHTML =
         "Looks like we are not able to see your whole body";
