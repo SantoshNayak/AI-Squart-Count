@@ -4,7 +4,7 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let windowHeight = window.outerHeight * 0.4;
 let windowWidth = window.outerWidth - 100;
-var fps = 10;
+var fps = 30;
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
@@ -92,21 +92,21 @@ const detectPose = async () => {
       //   "rightKneeAndAnkle"
       // ).innerHTML = rightKneeAndAnkleDistance;
 
-      if (
-        rightShoulderAndWristDistance > upValue &&
-        rightKneeAndAnkleDistance < threshHoldKneeAnkleDistance
-      ) {
-        document.getElementById("positionValue").innerHTML = "UP";
-        canCountIncrease = true;
-      } else if (rightShoulderAndWristDistance < downValue) {
-        document.getElementById("positionValue").innerHTML = "DOWN";
+      // if (
+      //   rightShoulderAndWristDistance > upValue &&
+      //   rightKneeAndAnkleDistance < threshHoldKneeAnkleDistance
+      // ) {
+      //   document.getElementById("positionValue").innerHTML = "UP";
+      //   canCountIncrease = true;
+      // } else if (rightShoulderAndWristDistance < downValue) {
+      //   document.getElementById("positionValue").innerHTML = "DOWN";
 
-        if (canCountIncrease) {
-          countValue = countValue + 1;
-          document.getElementById("countValue").innerHTML = countValue;
-          canCountIncrease = false;
-        }
-      }
+      //   if (canCountIncrease) {
+      //     countValue = countValue + 1;
+      //     document.getElementById("countValue").innerHTML = countValue;
+      //     canCountIncrease = false;
+      //   }
+      // }
     } else {
       document.getElementById("message").innerHTML =
         "Looks like we are not able to see your whole body";
