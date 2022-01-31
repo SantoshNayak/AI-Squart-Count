@@ -4,7 +4,7 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let windowHeight = window.outerHeight * 0.4;
 let windowWidth = window.outerWidth - 100;
-var fps = 20;
+var fps = 10;
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
