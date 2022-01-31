@@ -8,4 +8,4 @@ https://github.com/tensorflow/tfjs-models/tree/master/pose-detection/src/movenet
 
 # Access The Live Website here
 
-https://santoshnayak.github.io/AI-Pushup-count
+https://santoshnayak.github.io/AI-Squart-Count

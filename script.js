@@ -109,6 +109,11 @@ const detectPose = async () => {
 
         }
       }
+    }else{
+      document.getElementById(
+        "message"
+      ).innerHTML = 'Looks like we are not able to see your whole body';
+      
     }
   }
 
