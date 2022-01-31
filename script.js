@@ -86,9 +86,10 @@ const detectPose = async () => {
       //   right_knee.y,
       //   right_ankle.y
       // );
-      document.getElementById(
-        "rightKneeAndHipDistance"
-      ).innerHTML = rightKneeAndHipDistance;
+
+      // document.getElementById(
+      //   "rightKneeAndHipDistance"
+      // ).innerHTML = rightKneeAndHipDistance;
 
       if ( rightKneeAndHipDistance > thresholdRightKneeAndHipUpDistance) {
         canCountIncrease = true;
