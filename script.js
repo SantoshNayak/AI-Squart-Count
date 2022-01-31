@@ -90,7 +90,7 @@ const detectPose = async () => {
         "rightKneeAndHipDistance"
       ).innerHTML = rightKneeAndHipDistance;
 
-      if (thresholdRightKneeAndHipUpDistance > 30) {
+      if ( rightKneeAndHipDistance > thresholdRightKneeAndHipUpDistance) {
         canCountIncrease = true;
       }
       if (
@@ -104,7 +104,7 @@ const detectPose = async () => {
       }
     } else {
       document.getElementById("message").innerHTML =
-        "Looks like we are not able to see your whole body";
+        "We are not able to see your whole body";
     }
   }
 
