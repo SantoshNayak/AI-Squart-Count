@@ -1,4 +1,4 @@
-# TF-Bicep-curl-count
+# AI-Squart-Count
 
 Note:- Please move to a area where your whole body is visible so that we can predict perfectly
 
