@@ -9,3 +9,6 @@ https://github.com/tensorflow/tfjs-models/tree/master/pose-detection/src/movenet
 # Access The Live Website here
 
 https://santoshnayak.github.io/AI-Squart-Count
+
+# Demo
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/e0uzwzdESJM)
