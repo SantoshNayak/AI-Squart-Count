@@ -8,6 +8,9 @@ var fps = 30;
 
 var thresholdRightKneeAndHipDownDistance = 20;
 var thresholdRightKneeAndHipUpDistance = 30;
+
+var targetCount = 10;
+
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
@@ -91,7 +94,7 @@ const detectPose = async () => {
       //   "rightKneeAndHipDistance"
       // ).innerHTML = rightKneeAndHipDistance;
 
-      if ( rightKneeAndHipDistance > thresholdRightKneeAndHipUpDistance) {
+      if (rightKneeAndHipDistance > thresholdRightKneeAndHipUpDistance) {
         canCountIncrease = true;
       }
       if (
@@ -102,6 +105,11 @@ const detectPose = async () => {
         canCountIncrease = false;
 
         document.getElementById("countValue").innerHTML = countValue;
+
+        if (countValue >= targetCount) {
+          document.getElementById("targetAchievedMessage").innerHTML =
+            "Target Achieved";
+        }
       }
     } else {
       document.getElementById("message").innerHTML =
@@ -146,6 +154,15 @@ const detectPose = async () => {
 setupCamera();
 video.addEventListener("loadeddata", async () => {
   // document.getElementById("video").offsetWidth, document.getElementById("video").offsetHeight
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  if (urlParams.get("goal")) {
+    targetCount = urlParams.get("goal");
+  }
+  document.getElementById("targetCount").innerHTML = targetCount;
+
+  console.log("queryString", targetCount);
 
   canvas.width = document.getElementById("video").offsetWidth;
   canvas.height = document.getElementById("video").offsetHeight;
