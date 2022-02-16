@@ -159,8 +159,8 @@ video.addEventListener("loadeddata", async () => {
   const urlParams = new URLSearchParams(queryString);
   if (urlParams.get("goal")) {
     targetCount = urlParams.get("goal");
+    document.getElementById("targetCount").innerHTML = targetCount;
   }
-  document.getElementById("targetCount").innerHTML = targetCount;
 
   console.log("queryString", targetCount);
 
