@@ -108,7 +108,7 @@ const detectPose = async () => {
 
         if (countValue >= targetCount) {
           document.getElementById("targetAchievedMessage").innerHTML =
-            "Target Achieved";
+            "🎇 Target Achieved 🎇";
         }
       }
     } else {
@@ -160,7 +160,7 @@ video.addEventListener("loadeddata", async () => {
   if (urlParams.get("goal")) {
     targetCount = urlParams.get("goal");
   }
-  document.getElementById("targetAchievedMessage").innerHTML = targetCount;
+  document.getElementById("targetCount").innerHTML = targetCount;
 
   console.log("queryString", targetCount);
 
