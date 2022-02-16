@@ -109,6 +109,7 @@ const detectPose = async () => {
         if (countValue >= targetCount) {
           document.getElementById("targetAchievedMessage").innerHTML =
             "🎇 Target Achieved 🎇";
+            console.log(true)
         }
       }
     } else {
