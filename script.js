@@ -175,7 +175,7 @@ video.addEventListener("loadeddata", async () => {
   );
 
   document.getElementById("loadingText").innerHTML =
-    "Please stand in camera so that it can see full body";
+    "Please stand in front of camera";
 
   // document.getElementById("upscoreThreshold").innerHTML =upValue;
   // document.getElementById("downscoreThreshold").innerHTML =downValue;
