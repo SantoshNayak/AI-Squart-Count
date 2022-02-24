@@ -126,38 +126,23 @@ const detectPose = async () => {
     }
   }
 
-  //temporary area
+  // ctx.drawImage(video, 0, 0, windowWidth, windowHeight);
 
-  // if (poses.length) angleCalculation(poses[0].keypoints);
-  // canvas.width = windowWidth;
-  // canvas.height = windowHeight;
-  ctx.drawImage(video, 0, 0, windowWidth, windowHeight);
+  // poses.forEach((eachPose) => {
+  //   ctx.beginPath();
+  //   ctx.lineWidth = "4";
+  //   ctx.strokeStyle = "blue";
+   
 
-  poses.forEach((eachPose) => {
-    ctx.beginPath();
-    ctx.lineWidth = "4";
-    ctx.strokeStyle = "blue";
-    //  ctx.rect(
-    //   eachPose.keypoints.topLeft[0],
-    //   eachPose.keypoints.topLeft[1],
-    //   eachPose.keypoints.bottomRight[0] -eachPose.keypoints.topLeft[0],
-    //   eachPose.keypoints.bottomRight[1] -eachPose.keypoints.topLeft[1]
+  //   ctx.fillStyle = "red";
+  //   eachPose.keypoints.forEach((key, index) => {
+  //     ctx.fillRect(key.x, key.y, 5, 5);
 
-    //  )
 
-    ctx.fillStyle = "red";
-    eachPose.keypoints.forEach((key, index) => {
-      ctx.fillRect(key.x, key.y, 5, 5);
+  //   });
 
-      // if(index == 0){
-      //   ctx.moveTo(0, 0);
-      // }
-      // ctx.lineTo(key.x, key.y);
-    });
-    // ctx.lineTo(1,5,5,100,25,20);
-
-    ctx.stroke();
-  });
+  //   ctx.stroke();
+  // });
 };
 
 setupCamera();
