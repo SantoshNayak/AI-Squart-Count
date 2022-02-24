@@ -1,7 +1,7 @@
 let video = document.getElementById("video");
 let model;
-let canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
+// let canvas = document.getElementById("canvas");
+// let ctx = canvas.getContext("2d");
 let windowHeight = window.outerHeight * 0.4;
 let windowWidth = window.outerWidth - 100;
 var fps = 30;
@@ -173,10 +173,10 @@ video.addEventListener("loadeddata", async () => {
 
   console.log("queryString", targetCount);
 
-  canvas.width = document.getElementById("video").offsetWidth;
-  canvas.height = document.getElementById("video").offsetHeight;
-  canvas.setAttribute("width", windowWidth);
-  canvas.setAttribute("height", windowHeight);
+  // canvas.width = document.getElementById("video").offsetWidth;
+  // canvas.height = document.getElementById("video").offsetHeight;
+  // canvas.setAttribute("width", windowWidth);
+  // canvas.setAttribute("height", windowHeight);
   detector = await poseDetection.createDetector(
     poseDetection.SupportedModels.MoveNet,
     detectorConfig
