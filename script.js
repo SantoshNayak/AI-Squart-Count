@@ -93,7 +93,7 @@ const detectPose = async () => {
         right_hip.y
       );
 
-      document.getElementById("upVal").innerHTML =thresholdRightKneeAndHipUpDistance
+      document.getElementById("upVal").innerHTML =thresholdRightKneeAndHipUpDistance -5
       document.getElementById("downVal").innerHTML =thresholdRightKneeAndHipDownDistance
       document.getElementById("current").innerHTML =rightKneeAndHipDistance
 
