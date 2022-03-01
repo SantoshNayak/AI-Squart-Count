@@ -82,7 +82,9 @@ const detectPose = async () => {
       right_hip.score > 0.5
     ) {
       document.getElementById("message").innerHTML =
-        "We are good to count Squarts now ";
+        "We are good to count Squats now ";
+
+        document.getElementById("video").style.borderColor = "green";
 
       var rightKneeAndHipDistance = distanceBetweenTwo(
         right_knee.x,
@@ -123,6 +125,9 @@ const detectPose = async () => {
     } else {
       document.getElementById("message").innerHTML =
         "We are not able to see your whole body";
+
+        document.getElementById("video").style.borderColor = "red";
+
     }
   }
 

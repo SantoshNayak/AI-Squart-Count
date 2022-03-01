@@ -1,6 +1,10 @@
 * {
   background-color: #def8fc;
 }
+#video{
+  border: 15px solid;
+  border-radius: 15px;
+}
 canvas {
   border: 5px solid #f58220;
   border-radius: 9px;
