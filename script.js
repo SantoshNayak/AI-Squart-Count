@@ -93,12 +93,11 @@ const detectPose = async () => {
         right_hip.y
       );
 
+      document.getElementById("upVal").innerHTML =thresholdRightKneeAndHipUpDistance
+      document.getElementById("downVal").innerHTML =thresholdRightKneeAndHipDownDistance
+      document.getElementById("current").innerHTML =rightKneeAndHipDistance
 
-      //test for dynamic height
-     
-
-
-      
+      //test for dynamic height        
         if(!isDynamicDistanceSet){
           thresholdRightKneeAndHipUpDistance  = rightKneeAndHipDistance;
           thresholdRightKneeAndHipDownDistance =  rightKneeAndHipDistance -10
