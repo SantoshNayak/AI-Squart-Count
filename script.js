@@ -10,7 +10,7 @@ var thresholdRightKneeAndHipDownDistance = 20;
 var thresholdRightKneeAndHipUpDistance = 30;
 
 var targetCount = 10;
-
+var isDynamicDistanceSet = false;
 // alert(windowWidth)
 // alert(document.getElementsByClassName("test").offsetWidth);
 // alert(window.outerWidth);
@@ -95,9 +95,17 @@ const detectPose = async () => {
 
 
       //test for dynamic height
+     
 
-      thresholdRightKneeAndHipUpDistance  = rightKneeAndHipDistance;
-      thresholdRightKneeAndHipDownDistance =  rightKneeAndHipDistance -10
+
+      
+        if(!isDynamicDistanceSet){
+          thresholdRightKneeAndHipUpDistance  = rightKneeAndHipDistance;
+          thresholdRightKneeAndHipDownDistance =  rightKneeAndHipDistance -10
+    
+          isDynamicDistanceSet = true
+        }
+    
       //
 
 
