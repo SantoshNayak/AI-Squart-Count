@@ -92,19 +92,19 @@ const detectPose = async () => {
         right_hip.y
       );
 
-      document.getElementById("upVal").innerHTML =
-        thresholdRightKneeAndHipUpDistance - 5;
-      document.getElementById(
-        "downVal"
-      ).innerHTML = thresholdRightKneeAndHipDownDistance;
-      document.getElementById("current").innerHTML = rightKneeAndHipDistance;
+   //   document.getElementById("upVal").innerHTML =
+     //   thresholdRightKneeAndHipUpDistance - 5;
+   //   document.getElementById(
+     //   "downVal"
+   //   ).innerHTML = thresholdRightKneeAndHipDownDistance;
+    document.getElementById("current").innerHTML = rightKneeAndHipDistance;
 
 
       if(rightKneeAndHipDistance <  thresholdRightKneeAndHipUpDistance - 5){
-        document.getElementById("message").innerHTML = ' will work';
+    //    document.getElementById("message").innerHTML = ' will work';
 
       }else{
-        document.getElementById("message").innerHTML = ' Not work';
+    //    document.getElementById("message").innerHTML = ' Not work';
 
       }
 
