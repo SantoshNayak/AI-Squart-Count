@@ -100,7 +100,13 @@ const detectPose = async () => {
       document.getElementById("current").innerHTML = rightKneeAndHipDistance;
 
 
-      // if(rightKneeAndHipDistance < )message
+      if(rightKneeAndHipDistance <  thresholdRightKneeAndHipUpDistance - 5){
+        document.getElementById("message").innerHTML = ' will work';
+
+      }else{
+        document.getElementById("message").innerHTML = ' Not work';
+
+      }
 
       //test for dynamic height
       if (!isDynamicDistanceSet) {
