@@ -35,9 +35,8 @@ const detectorConfig = {
 video.setAttribute("playsinline", true);
 video.setAttribute("controls", true);
 setTimeout(() => {
-    video.removeAttribute("controls");
+  video.removeAttribute("controls");
 });
-
 
 // var upValue = 150;
 // var downValue = 130;
@@ -84,7 +83,7 @@ const detectPose = async () => {
       document.getElementById("message").innerHTML =
         "We are good to count Squats now ";
 
-        document.getElementById("video").style.borderColor = "green";
+      document.getElementById("video").style.borderColor = "green";
 
       var rightKneeAndHipDistance = distanceBetweenTwo(
         right_knee.x,
@@ -93,20 +92,27 @@ const detectPose = async () => {
         right_hip.y
       );
 
-      document.getElementById("upVal").innerHTML =thresholdRightKneeAndHipUpDistance -5
-      document.getElementById("downVal").innerHTML =thresholdRightKneeAndHipDownDistance
-      document.getElementById("current").innerHTML =rightKneeAndHipDistance
+      document.getElementById("upVal").innerHTML =
+        thresholdRightKneeAndHipUpDistance - 5;
+      document.getElementById(
+        "downVal"
+      ).innerHTML = thresholdRightKneeAndHipDownDistance;
+      document.getElementById("current").innerHTML = rightKneeAndHipDistance;
 
-      //test for dynamic height        
-        if(!isDynamicDistanceSet){
-          thresholdRightKneeAndHipUpDistance  = rightKneeAndHipDistance;
-          thresholdRightKneeAndHipDownDistance =  rightKneeAndHipDistance -10
+      //test for dynamic height
+      if (!isDynamicDistanceSet) {
+        setTimeout(()=>{
+          thresholdRightKneeAndHipUpDistance = rightKneeAndHipDistance;
+          thresholdRightKneeAndHipDownDistance = rightKneeAndHipDistance - 10;
+  
+     
+        },1500)
+
+        isDynamicDistanceSet = true;
     
-          isDynamicDistanceSet = true
-        }
-    
+      }
+
       //
-
 
       // var rightKneeAndAnkleDistance = distanceBetweenTwo(
       //   right_knee.x,
@@ -134,15 +140,14 @@ const detectPose = async () => {
         if (countValue >= targetCount) {
           document.getElementById("targetAchievedMessage").innerHTML =
             "🎇 Target Achieved 🎇";
-            console.log(true)
+          console.log(true);
         }
       }
     } else {
       document.getElementById("message").innerHTML =
         "We are not able to see your whole body";
 
-        document.getElementById("video").style.borderColor = "red";
-
+      document.getElementById("video").style.borderColor = "red";
     }
   }
 
@@ -152,12 +157,10 @@ const detectPose = async () => {
   //   ctx.beginPath();
   //   ctx.lineWidth = "4";
   //   ctx.strokeStyle = "blue";
-   
 
   //   ctx.fillStyle = "red";
   //   eachPose.keypoints.forEach((key, index) => {
   //     ctx.fillRect(key.x, key.y, 5, 5);
-
 
   //   });
 
