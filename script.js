@@ -99,17 +99,16 @@ const detectPose = async () => {
       ).innerHTML = thresholdRightKneeAndHipDownDistance;
       document.getElementById("current").innerHTML = rightKneeAndHipDistance;
 
+
+      // if(rightKneeAndHipDistance < )message
+
       //test for dynamic height
       if (!isDynamicDistanceSet) {
         setTimeout(()=>{
-          thresholdRightKneeAndHipUpDistance = rightKneeAndHipDistance;
-          thresholdRightKneeAndHipDownDistance = rightKneeAndHipDistance - 10;
-  
-     
+          thresholdRightKneeAndHipUpDistance = rightKneeAndHipDistance -5 ;
+          thresholdRightKneeAndHipDownDistance = rightKneeAndHipDistance - 10;     
         },1500)
-
-        isDynamicDistanceSet = true;
-    
+        isDynamicDistanceSet = true;    
       }
 
       //
