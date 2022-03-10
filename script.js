@@ -78,7 +78,10 @@ const detectPose = async () => {
       left_hip.score > 0.5 &&
       left_knee.score > 0.5 &&
       right_knee.score > 0.5 &&
-      right_hip.score > 0.5
+      right_hip.score > 0.5 &&
+
+      right_shoulder.score > 0.5 &&
+      right_ankle.score > 0.5 
     ) {
       document.getElementById("message").innerHTML =
         "We are good to count Squats now ";
@@ -92,8 +95,15 @@ const detectPose = async () => {
         right_hip.y
       );
 
+      var rightShoulderToAnkleDistance =  distanceBetweenTwo(
+        right_shoulder.x,
+        right_ankle.x,
+        right_shoulder.y,
+        right_ankle.y
+      );
+
     
-      var tilesAway = (rightKneeAndHipDistance - 257.57)/16.036;
+      var tilesAway = (rightShoulderToAnkleDistance - 257.57)/16.036;
       
 
       document.getElementById(
