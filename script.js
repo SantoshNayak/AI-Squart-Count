@@ -92,21 +92,35 @@ const detectPose = async () => {
         right_hip.y
       );
 
-      document.getElementById("upVal").innerHTML =
-        thresholdRightKneeAndHipUpDistance - 5;
+    
+      var tilesAway = (rightKneeAndHipDistance - 257.57)/16.036;
+      
+
       document.getElementById(
-        "downVal"
-      ).innerHTML = thresholdRightKneeAndHipDownDistance;
-      document.getElementById("current").innerHTML = rightKneeAndHipDistance;
+        "rightShoulderToAnkleDistance"
+      ).innerHTML = rightShoulderToAnkleDistance;
+      document.getElementById(
+        "tilesAway"
+      ).innerHTML = tilesAway;
 
 
-      if(rightKneeAndHipDistance <  thresholdRightKneeAndHipUpDistance - 5){
-        document.getElementById("message").innerHTML = ' will work';
 
-      }else{
-        document.getElementById("message").innerHTML = ' Not work';
 
-      }
+      // document.getElementById("upVal").innerHTML =
+      //   thresholdRightKneeAndHipUpDistance - 5;
+      // document.getElementById(
+      //   "downVal"
+      // ).innerHTML = thresholdRightKneeAndHipDownDistance;
+      // document.getElementById("current").innerHTML = rightKneeAndHipDistance;
+
+
+      // if(rightKneeAndHipDistance <  thresholdRightKneeAndHipUpDistance - 5){
+      //   document.getElementById("message").innerHTML = ' will work';
+
+      // }else{
+      //   document.getElementById("message").innerHTML = ' Not work';
+
+      // }
 
       //test for dynamic height
       if (!isDynamicDistanceSet) {
