@@ -137,8 +137,8 @@ const detectPose = async () => {
         canCountIncrease = true;
       }
     }else{
-      document.getElementById("video").style.borderColor = "red";
-      console.log('red')
+      // document.getElementById("video").style.borderColor = "red";
+      // console.log('red')
       // document.getElementById("Ready").innerHTML = "Oops! You are not in frame";
 
     }
