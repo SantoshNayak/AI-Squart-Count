@@ -70,7 +70,7 @@ const detectPose = async () => {
       right_ankle.score > 0.5
     ) {
 
-      document.getElementById("video").style.borderColor = "blue";
+      // document.getElementById("video").style.borderColor = "blue";
       // document.getElementById("Ready").innerHTML = "Hold on! We are measuring your distance";
 
       var rightShoulderToAnkleDistance = distanceBetweenTwo(
@@ -100,7 +100,7 @@ const detectPose = async () => {
           bFirst = true;
           person_height = rightShoulderToAnkleDistance;
           // document.getElementById("personHeight").innerHTML = person_height;
-          document.getElementById("Ready").innerHTML = "YOU ARE READY TO START";
+          // document.getElementById("Ready").innerHTML = "YOU ARE READY TO START";
           // document.getElementById(
           //   "isPositionLocked"
           // ).innerHTML = positionLocked;
@@ -139,7 +139,7 @@ const detectPose = async () => {
     }else{
       document.getElementById("video").style.borderColor = "red";
       console.log('red')
-      document.getElementById("Ready").innerHTML = "Oops! You are not in frame";
+      // document.getElementById("Ready").innerHTML = "Oops! You are not in frame";
 
     }
   }
