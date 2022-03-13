@@ -29,6 +29,7 @@ var positionLocked = false;
 var bFirst = false;
 var upValue = 150;
 var downValue = 130;
+var isInframeFirstTime = false
 
 var threshHoldKneeAnkleDistance = 30;
 let detector;
@@ -71,7 +72,11 @@ const detectPose = async () => {
     ) {
 
       // document.getElementById("video").style.borderColor = "blue";
-      // document.getElementById("Ready").innerHTML = "Hold on! We are measuring your distance";
+      if(!isInframeFirstTime){
+
+        document.getElementById("Ready").innerHTML = "Hold on! We are measuring your distance";
+        isInframeFirstTime= true
+      }
 
       var rightShoulderToAnkleDistance = distanceBetweenTwo(
         right_shoulder.x,
@@ -100,7 +105,7 @@ const detectPose = async () => {
           bFirst = true;
           person_height = rightShoulderToAnkleDistance;
           // document.getElementById("personHeight").innerHTML = person_height;
-          // document.getElementById("Ready").innerHTML = "YOU ARE READY TO START";
+          document.getElementById("Ready").innerHTML = "YOU ARE READY TO START";
           // document.getElementById(
           //   "isPositionLocked"
           // ).innerHTML = positionLocked;
