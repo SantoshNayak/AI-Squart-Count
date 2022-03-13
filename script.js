@@ -74,7 +74,7 @@ const detectPose = async () => {
       // document.getElementById("video").style.borderColor = "blue";
       if(!isInframeFirstTime){
 
-        document.getElementById("Ready").innerHTML = "Hold on! We are measuring your distance";
+        document.getElementById("Ready").innerHTML = "Plz. hold on!! We are Calibrating";
         isInframeFirstTime= true
       }
 
@@ -105,7 +105,7 @@ const detectPose = async () => {
           bFirst = true;
           person_height = rightShoulderToAnkleDistance;
           // document.getElementById("personHeight").innerHTML = person_height;
-          document.getElementById("Ready").innerHTML = "YOU ARE READY TO START";
+          document.getElementById("Ready").innerHTML = "All set!! Do not move untill the Squat is complete";
           // document.getElementById(
           //   "isPositionLocked"
           // ).innerHTML = positionLocked;

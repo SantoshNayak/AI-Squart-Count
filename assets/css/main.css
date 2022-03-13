@@ -20,8 +20,8 @@ canvas {
 }
 
 #Ready{
-  color: #f58220;
-  font-size: 60px;
+  color: grey;
+  font-size: 30px;
 }
 .test {
   display: block;
