@@ -1,5 +1,5 @@
 * {
-  background-color: #def8fc;
+  /* background-color: #def8fc; */
 }
 canvas {
   border: 5px solid #f58220;
@@ -9,17 +9,16 @@ canvas {
   color: #f58220;
   font-size: 30px;
 }
-.goalachieved{
+.goalachieved {
   color: #f58220;
   font-size: 20px;
 }
-#countValue{
+#countValue {
   color: #f58220;
   font-size: 40px;
-
 }
 
-#Ready{
+#Ready {
   color: grey;
   font-size: 30px;
 }
@@ -37,7 +36,127 @@ canvas {
 lottie-player {
   margin-left: auto;
   margin-right: auto;
-}#video{
-  border: 15px solid;
+}
+#video {
+  border: 10px solid;
   border-radius: 15px;
+  -webkit-box-shadow: 10px 9px 19px -8px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 10px 9px 19px -8px rgba(0, 0, 0, 0.63);
+  box-shadow: 10px 9px 19px -8px rgba(0, 0, 0, 0.63);
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+#overlaytext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.dot-elastic {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #d32b15;
+  color: #d32b15;
+  animation: dotElastic 1s infinite linear;
+  top: 55%;
+  left: 50%;
+}
+
+.dot-elastic::before,
+.dot-elastic::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-elastic::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #d32b15;
+  color: #d32b15;
+  animation: dotElasticBefore 1s infinite linear;
+}
+
+.dot-elastic::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #d32b15;
+  color: #d32b15;
+  animation: dotElasticAfter 1s infinite linear;
+}
+
+@keyframes dotElasticBefore {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1.5);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dotElastic {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes dotElasticAfter {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.67);
+  }
+  75% {
+    transform: scale(1, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }

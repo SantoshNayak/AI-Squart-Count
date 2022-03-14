@@ -29,7 +29,7 @@ var positionLocked = false;
 var bFirst = false;
 var upValue = 150;
 var downValue = 130;
-var isInframeFirstTime = false
+var isInframeFirstTime = false;
 
 var threshHoldKneeAnkleDistance = 30;
 let detector;
@@ -70,12 +70,15 @@ const detectPose = async () => {
       right_knee.score > 0.5 &&
       right_ankle.score > 0.5
     ) {
-
       // document.getElementById("video").style.borderColor = "blue";
-      if(!isInframeFirstTime){
+      if (!isInframeFirstTime) {
+        // document.getElementById("Ready").innerHTML =
+        //   "Plz. hold on!! We are Calibrating";
+        isInframeFirstTime = true;
 
-        document.getElementById("Ready").innerHTML = "Plz. hold on!! We are Calibrating";
-        isInframeFirstTime= true
+        
+        document.getElementById("overlaytext").innerHTML =
+          "Stand Still";
       }
 
       var rightShoulderToAnkleDistance = distanceBetweenTwo(
@@ -104,16 +107,14 @@ const detectPose = async () => {
           positionLocked = true;
           bFirst = true;
           person_height = rightShoulderToAnkleDistance;
-          // document.getElementById("personHeight").innerHTML = person_height;
-          document.getElementById("Ready").innerHTML = "All set!! Do not move untill the Squat is complete";
+          // document.getElementById("Ready").innerHTML =
+          //   "All set!! Do not move untill the Squat is complete";
+            off()
           // document.getElementById(
           //   "isPositionLocked"
           // ).innerHTML = positionLocked;
 
           document.getElementById("video").style.borderColor = "green";
-
-
-
         } else {
           tiles_previous = tiles_now;
         }
@@ -129,8 +130,8 @@ const detectPose = async () => {
           canCountIncrease = false;
           document.getElementById("countValue").innerHTML = countValue;
 
-          if(countValue >= targetCount){
-            sendMessagetoFlutter(true)
+          if (countValue >= targetCount) {
+            sendMessagetoFlutter(true);
           }
         }
       }
@@ -141,10 +142,9 @@ const detectPose = async () => {
       ) {
         canCountIncrease = true;
       }
-    }else{
+    } else {
       // document.getElementById("video").style.borderColor = "red";
       // console.log('red')
-      // document.getElementById("Ready").innerHTML = "Oops! You are not in frame";
 
     }
   }
@@ -179,6 +179,10 @@ video.addEventListener("loadeddata", async () => {
     "Please stand in front of camera";
 
   setInterval(detectPose, 30);
+  on()
+  document.getElementById("overlaytext").innerHTML =
+    "Detecting";
+  
 });
 
 function sendMessagetoFlutter(value) {
@@ -191,4 +195,11 @@ function distanceBetweenTwo(x2, x1, y2, y1) {
   var b = y2 - y1;
 
   return Math.sqrt(a * a + b * b);
+}
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 }
