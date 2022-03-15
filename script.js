@@ -86,8 +86,8 @@ const detectPose = async () => {
     ) {
       // document.getElementById("video").style.borderColor = "blue";
       if (!isInframeFirstTime) {
-        // document.getElementById("Ready").innerHTML =
-        //   "Plz. hold on!! We are Calibrating";
+        document.getElementById("Ready").innerHTML =
+          "Plz. hold on!! We are Calibrating";
         isInframeFirstTime = true;
 
         
@@ -121,8 +121,8 @@ const detectPose = async () => {
           positionLocked = true;
           bFirst = true;
           person_height = rightShoulderToAnkleDistance;
-          // document.getElementById("Ready").innerHTML =
-          //   "All set!! Do not move untill the Squat is complete";
+          document.getElementById("Ready").innerHTML =
+            "All set!! Do not move untill the Squat is complete";
             off()
           // document.getElementById(
           //   "isPositionLocked"
@@ -198,7 +198,7 @@ video.addEventListener("loadeddata", async () => {
   );
 
   document.getElementById("loadingText").innerHTML =
-    "Please stand in front of camera";
+    "Please stand in front of camera where whole body is visible";
 
   setInterval(detectPose, 30);
   on()

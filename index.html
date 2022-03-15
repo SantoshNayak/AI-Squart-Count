@@ -32,8 +32,7 @@
 
 
 
-    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_Pkg2zS.json" background="transparent" speed="1"
-      style="width: 200px; height: 100px;" loop autoplay></lottie-player>
+
 
     <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 ">
 
@@ -51,8 +50,9 @@
     </div>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+      <h5 id="Ready"></h5>
       <h7 id="loadingText">Model is loading... Please wait..</h7>
-   
+
 
       <video id="video" autoplay></video>
 
@@ -60,11 +60,13 @@
       <div id="cont" data-pct="0">
         <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-          <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+          <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+          </circle>
         </svg>
-        </div>
-  
+      </div>
 
+      <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_Pkg2zS.json" background="transparent" speed="1"
+        style="width: 200px; height: 100px;" loop autoplay></lottie-player>
       <div class="test">
         <!-- <canvas id="canvas"></canvas> -->
 
@@ -75,8 +77,8 @@
 
   <div id="overlay">
     <div id="overlaytext">Overlay Text</span>
-       </div>
-       <div class="dot-elastic"></div>
+    </div>
+    <div class="dot-elastic"></div>
   </div>
 
 
