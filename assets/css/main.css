@@ -53,14 +53,14 @@ lottie-player {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  background-color: rgb(0 0 0 / 82%); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 #overlaytext {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 23%;
+  left: 49%;
   font-size: 50px;
   color: white;
   transform: translate(-50%, -50%);
@@ -75,8 +75,8 @@ lottie-player {
   background-color: #d32b15;
   color: #d32b15;
   animation: dotElastic 1s infinite linear;
-  top: 55%;
-  left: 50%;
+  top: 27%;
+  left: 46%;
 }
 
 .dot-elastic::before,
