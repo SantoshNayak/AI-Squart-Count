@@ -36,6 +36,20 @@ let detector;
 
 var canCountIncrease = true;
 var countValue = 0;
+
+// background color
+backgroundColor= '#b3cef6',
+
+// progress bar color
+progressColor='#4b86db',
+
+// percentage data to present
+// 75 = 75%
+percent= 5,
+
+// animation speed
+duration= 2000
+
 const setupCamera = () => {
   navigator.mediaDevices
     .getUserMedia({
@@ -130,9 +144,14 @@ const detectPose = async () => {
           canCountIncrease = false;
           document.getElementById("countValue").innerHTML = countValue;
 
+          var percentageCompleted = (countValue/ targetCount) * 100
+          changePercentage(percentageCompleted)
+
           if (countValue >= targetCount) {
             sendMessagetoFlutter(true);
           }
+
+    
         }
       }
 
@@ -162,6 +181,9 @@ video.addEventListener("loadeddata", async () => {
 
   // document.getElementById("isPositionLocked").innerHTML = positionLocked;
   // document.getElementById("initialTime").innerHTML = initialTime;
+
+  $(".progress-bar").loading();
+
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -202,4 +224,32 @@ function on() {
 
 function off() {
   document.getElementById("overlay").style.display = "none";
+}
+
+function changePercentage(vp){
+  // percent =90;
+  // document.querySelector('.progress-bar').dataset.percentage = 90;
+
+  // // $("#chart").attr("data-percent", percent.toString());
+  // console.log('percent changed', percent)
+
+  var val = parseInt(vp);
+  var $circle = $('#svg #bar');
+  
+  if (isNaN(val)) {
+   val = 100; 
+  }
+  else{
+    var r = $circle.attr('r');
+    var c = Math.PI*(r*2);
+   
+    if (val < 0) { val = 0;}
+    if (val > 100) { val = 100;}
+    
+    var pct = ((100-val)/100)*c;
+    
+    $circle.css({ strokeDashoffset: pct});
+    
+    $('#cont').attr('data-pct',val);
+  }
 }
