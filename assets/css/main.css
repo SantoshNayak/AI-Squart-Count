@@ -194,9 +194,7 @@ lottie-player {
   border-radius: 100%;
   line-height: 160px;
   font-size: 2em;
-  text-shadow: 0 0 0.5em black;
+  /* text-shadow: 0 0 0.5em black; */
 }
 
-input {
-  color: #000;
-}
+#loadingText{font-size: 17px;}

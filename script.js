@@ -67,7 +67,7 @@ const detectPose = async () => {
   const poses = await detector.estimatePoses(document.querySelector("video"));
 
   // const predictions = await model.estimateHands(document.querySelector("video"));
-  // console.log(poses);
+  console.log(poses);
 
   if (poses.length) {
     let right_shoulder = poses[0].keypoints.find(
