@@ -198,7 +198,7 @@ video.addEventListener("loadeddata", async () => {
   );
 
   document.getElementById("loadingText").innerHTML =
-    "Please stand in front of camera where whole body is visible";
+    "Please stand Infront of camera where whole body is visible";
 
   setInterval(detectPose, 30);
   on()
