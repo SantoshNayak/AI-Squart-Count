@@ -182,7 +182,7 @@ video.addEventListener("loadeddata", async () => {
   // document.getElementById("isPositionLocked").innerHTML = positionLocked;
   // document.getElementById("initialTime").innerHTML = initialTime;
 
-  $(".progress-bar").loading();
+  // $(".progress-bar").loading();
 
 
   const queryString = window.location.search;
